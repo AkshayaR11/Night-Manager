@@ -13,7 +13,7 @@ void on_package_selected(GtkTreeView *tree_view, GtkTreePath *path, GtkTreeViewC
 void on_install_clicked(GtkWidget *widget, gpointer data);
 void on_uninstall_clicked(GtkWidget *widget, gpointer data);
 void on_toggle_terminal_clicked(GtkWidget *widget, gpointer data);
-void populate_package_list(GtkListStore *list_store);
+
 
 void fetch_available_packages(GtkListStore *list_store) {
     FILE *fp;
@@ -78,12 +78,12 @@ void on_install_clicked(GtkWidget *widget, gpointer data) {
         (char **)command,             // Command to execute
         NULL,                         // Environment (NULL uses current environment)
         G_SPAWN_DEFAULT,              // Spawn flags
-        NULL,                         // Child setup function (not needed here)
+                                // Child setup function (not needed here)
         NULL,                         // User data for the setup function
-        NULL,                         // Cancellable object (not needed)
+                                 // Cancellable object (not needed)
         -1,                           // Timeout for the operation (-1 means no timeout)
-        NULL,                         // GCancellable (not needed)
-        NULL,                         // Callback for process completion (not needed here)
+                                 // GCancellable (not needed)
+                               // Callback for process completion (not needed here)
         NULL                          // User data for the callback
     );
 }
@@ -102,12 +102,12 @@ void on_uninstall_clicked(GtkWidget *widget, gpointer data) {
         (char **)command,             // Command to execute
         NULL,                         // Environment (NULL uses current environment)
         G_SPAWN_DEFAULT,              // Spawn flags
-        NULL,                         // Child setup function (not needed here)
+                                // Child setup function (not needed here)
         NULL,                         // User data for the setup function (unnecessary)
-        NULL,                         // Cancellable object (not needed)
+                               // Cancellable object (not needed)
         -1,                           // Timeout for the operation (-1 means no timeout)
-        NULL,                         // GCancellable (not needed)
-        NULL,                         // Callback for process completion (not needed here)
+                               // GCancellable (not needed)
+                                // Callback for process completion (not needed here)
         NULL                          // User data for the callback
     );
 }
